@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\User;
+use Devrabiul\ToastMagic\Facades\ToastMagic;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -31,12 +32,14 @@ class AdminController extends Controller
             'category_id' => $request->category_id,
 
         ]);
+        ToastMagic::success('Category add successfully!');
         return redirect("admin/category");
 
 
     }
     public function deleteCategory(Category $category){
         $category->delete();
+        ToastMagic::success('Category deleted successfully!');
         return redirect ("admin/category");
     }
 }
