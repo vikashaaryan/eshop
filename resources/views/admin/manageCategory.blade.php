@@ -28,7 +28,7 @@
                             @method("delete")
                             <input type="submit" value="X" class="py-1 px-2 rounded text-white bg-red-500">
                         </form>
-                        <a href="" class="py-1 px-2 rounded text-white  bg-blue-500">Edit</a>
+                        <a href="/admin/editCategory/{{$cat->id}}" class="py-1 px-2 rounded text-white  bg-blue-500">Edit</a>
                     </td>
                   </tr>
                     

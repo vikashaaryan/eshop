@@ -12,7 +12,7 @@
     <div class="py-4 px-6 bg-black ">
         <div class="flex justify-between items-center mx-auto">
           <a href="" class="text-2xl font-bold text-white">{{env("APP_NAME")}}</a>
-          <a href="" class="text-white bg-red-400 px-2 py-1 rounded font-semibold ">Logout</a>
+          <a href="" class="text-white border border-red-500 px-2 py-1 rounded font-semibold ">Logout</a>
          
         </div>
     </div>

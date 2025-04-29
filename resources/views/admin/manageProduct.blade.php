@@ -29,7 +29,7 @@
                 <td class="shadow border-b py-2 text-center px-2">{{$item->title}}</td>
                 <td class="shadow border-b py-2 text-center px-2">{{$item->brand}}</td>
                 <td class="shadow border-b py-2 text-center px-2"><del class="text-xs text-red-500">{{$item->price}}</del>   {{$item->discount_price}}</td>
-                <td class="shadow border-b py-2 text-center px-2">{{$item->category_id}}</td>
+                <td class="shadow border-b py-2 text-center px-2">{{$item->category->cat_title}}</td>
                 <td class="shadow border-b py-2 flex justify-center text-center px-2">
                     <form action="{{ route('admin.deleteProduct', $item->id) }}" method="POST" >
                          @csrf

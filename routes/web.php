@@ -16,3 +16,6 @@ Route::get("/admin/product/insert", [ProductController::class, 'insert'])->name(
 Route::post("/admin/product/insert", [ProductController::class, 'store'])->name('admin.storeProduct');
 Route::delete('/admin/category/{category}', [AdminController::class, 'deleteCategory'])->name('admin.deleteCategory');
 Route::delete('/admin/product/{product}', [ProductController::class, 'deleteProduct'])->name('admin.deleteProduct');
+
+Route::get("/admin/editCategory/{category}" , [AdminController::class, 'editCat'])->name("admin.editCategory");
+Route::put("/admin/editCategory/{category}", [AdminController::class, 'updateCategory'])->name("admin.editCategory");

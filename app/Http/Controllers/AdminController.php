@@ -42,4 +42,18 @@ class AdminController extends Controller
         ToastMagic::success('Category deleted successfully!');
         return redirect ("admin/category");
     }
+    public function editCat(Category $category){
+        $categories = Category::orderby('id', 'DESC')->paginate(20);
+        return view("admin/editCategory", compact('categories','category'));
+    }
+    public function updateCategory(Request $req ,$c){
+        $item = $req->validate([
+            'cat_title' => 'required|string',
+            'cat_description' => 'required' ,
+        ]);
+        $item = Category::find($c)->update($item);
+        return redirect("/admin/category");
+
+    }
+    
 }
