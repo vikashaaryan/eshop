@@ -15,9 +15,21 @@ class HomeController extends Controller
         $categories = Category::where('category_id', null)->get(); 
         return view('home', compact('products', 'categories'));
     }
+    // search work
+    public function search(Request $req){
+        $search = $req->search;
+        $products = Product::where('title', 'like', "%$search%")->paginate(50);
 
-    public function login()
-    {
-        return view('login');
+        $categories = Category::where("category_id", null)->get();
+        return view("home", compact("products", "categories"));
     }
+    //filter work
+
+    public function filter($catId){
+        $products = Product::where("category_id", "$catId")->paginate(50);
+        $categories = Category::where("category_id", null)->get();
+        return view("home", compact("products", "categories"));
+    }
+
+    
 }
