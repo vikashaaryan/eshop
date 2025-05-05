@@ -4,8 +4,8 @@
 @section('content')
 
 @if (Route::currentRouteName() == "homepage")    
-  <div class="flex">
-    <img src="{{ asset('banner.jpg') }}" alt="Banner" class="w-full h-[60vh] object-cover shadow-lg">
+  <div class="flex ">
+    <img src="{{ asset('banner5.jpg') }}" alt="Banner" class="w-full   object-fit shadow-lg">
   </div>
 @endif
 

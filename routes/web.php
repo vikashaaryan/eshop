@@ -11,9 +11,11 @@ Route::get("/", [HomeController::class, "home"])->name("homepage");
 Route::get("/search",[HomeController::class, "search"])->name("search");
 Route::get("/filter/{catId}", [HomeController::class, "filter"])->name("filter");
 
+
 //auth routes
 Route::match(['post', 'get'], "/login", [AuthController::class, "login"])->name("login");
 Route::match(['post', 'get'], "/register", [AuthController::class, "register"])->name("register");
+Route::match(['post', 'get'], "/logout", [AuthController::class, "logoutUser"])->name("logoutUser");
 
 Route::prefix("admin")->group(function () {
 

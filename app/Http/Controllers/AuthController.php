@@ -44,4 +44,9 @@ class AuthController extends Controller
         }
         return view("register");
     }
+
+    public function logoutUser(){
+        Auth::logout();
+        return redirect()->route("login");
+    }
 }
